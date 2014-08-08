@@ -1499,6 +1499,7 @@ containing a value of this type.
         public static final int icon=0x7f08003c;
         public static final int ifRoom=0x7f08001d;
         public static final int image=0x7f080039;
+        public static final int list=0x7f080050;
         public static final int listMode=0x7f080014;
         public static final int list_item=0x7f08003b;
         public static final int map=0x7f08004e;
@@ -1529,11 +1530,13 @@ containing a value of this type.
         public static final int showCustom=0x7f08001a;
         public static final int showHome=0x7f080017;
         public static final int showTitle=0x7f080019;
+        public static final int show_map=0x7f080051;
         public static final int split_action_bar=0x7f080030;
         public static final int strict_sandbox=0x7f080009;
         public static final int submit_area=0x7f08004b;
         public static final int tabMode=0x7f080015;
         public static final int terrain=0x7f080003;
+        public static final int text=0x7f08004f;
         public static final int title=0x7f08003d;
         public static final int top_action_bar=0x7f080032;
         public static final int up=0x7f080033;
@@ -1594,6 +1597,8 @@ containing a value of this type.
         public static final int abc_simple_decor=0x7f030017;
         public static final int main=0x7f030018;
         public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int template_text_view=0x7f03001a;
+        public static final int templates_list_view=0x7f03001b;
     }
     public static final class menu {
         public static final int get_current_location=0x7f0c0000;

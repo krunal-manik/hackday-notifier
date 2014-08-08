@@ -1,10 +1,14 @@
 package com.example.getcurrentlocation;
 
 
+import java.util.List;
+
+import models.LocationModel;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
 import api.GPSTracker;
+import api.ServiceFactory;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -31,12 +35,19 @@ public class GetCurrentLocation extends Activity {
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(
                 new LatLng(gps.getLatitude(), gps.getLongitude()), 16));
 
-        // You can customize the marker image using images bundled with
-        // your app, or dynamically generated bitmaps. 
+        showType(map, "Police", gps.getLatitude(), gps.getLongitude());
+        List<LocationModel> models = ServiceFactory.getApiService()
+        		.getLocations(gps.getLatitude(), gps.getLongitude(), "Police");
+
+        for(LocationModel model: models)
+        	showType(map, model.getType(), model.getLatitude(), model.getLongitude());
+    }
+    
+    private void showType(GoogleMap map, String type, double latitude, double longitude) {
         map.addMarker(new MarkerOptions()
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.policeman))
-                .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
-                .position(new LatLng(gps.getLatitude(), gps.getLongitude())));
+        .icon(BitmapDescriptorFactory.fromResource(R.drawable.policeman))
+        .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
+        .position(new LatLng(latitude, longitude)));
     }
 
 }
